@@ -25,7 +25,6 @@ bower install bootstrap
 # 运行
 `node app.js`，访问`http://localhost:3000`
 
-
 # 开发流程
 1、需求分析
 2、项目依赖初始化
