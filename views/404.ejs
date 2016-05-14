@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ./partial/head %>
+    <link rel="stylesheet" href="/css/404.css">
+    <script src="/js/404.js"></script>
+    <!--<meta http-equiv="refresh" content="5;url=<%= host%>"/>-->
+</head>
+
+<body>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="pic">
+                <div class="sorry">程序猿哥哥把页面偷走了</div>
+                <div class="jump" data-host="<%= host%>">
+                    <span></span>&nbsp;秒后跳转到首页
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

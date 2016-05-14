@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" >
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../bower_components/Swiper/dist/css/swiper.min.css" >
+    <script src="../bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../bower_components/layer/skin/layer.css">
+    <script src="../bower_components/layer/layer.js"></script>
+
+    <link rel="stylesheet" href="../public/css/index.css" media="all">
+    <script src="../public/js/index.js"></script>
+
+    <title>首页</title>
+</head>
+<body>
+<div class="header">
+    <div id="w-loading"><div style="width: 100%; display: none;"></div></div>
+    <nav class="navbar navbar-default my-navbar">
+        <div class="navbar-header">
+            <button class="navbar-toggle" aria-expanded="false" type="button" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="logo">
+                <a class="logo-icon" href=""></a>
+            </span>
+            <span class="user">
+                <a class="user-icon" href=""></a>
+            </span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse in">
+            <div class="main-nav" >
+                <ul class="nav navbar-left">
+                    <span class="logo">
+                        <a class="logo-icon" href=""></a>
+                    </span>
+                    <li class="">
+                        <a href="#">首页</a>
+                    </li>
+                    <li class="">
+                        <a href="#">关注</a>
+                    </li>
+                    <li>
+                        <a href="#">发现</a>
+                    </li>
+                    <li class="">
+                        <a href="#">消息</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <li><a class="login" href="#">登录</a></li>
+                    <li><a class="register" href="#">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="register-body">
+    <div class="title">
+        <span>注册</span>
+    </div>
+    <form class="input-group" method="post" action="">
+        <input type="text" class="form-control" placeholder="请输入用户名" name="username">
+        <input type="password" class="form-control" placeholder="请输入密码" name="password">
+        <input type="password" class="form-control" placeholder="请再次确认密码" name="password2" >
+        <div class="fr my-btn">
+            <button class="btn btn-primary" type="submit">注册</button>
+            <span class="btn btn-default">取消</span>
+        </div>
+    </form>
+</div>
+<div class="backpop"></div>
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../public/img/index/slide1.png"></div>
+                    <div class="swiper-slide"><img src="../public/img/index/slide2.png"></div>
+                    <div class="swiper-slide"><img src="../public/img/index/slide3.png"></div>
+                </div>
+                <!-- 分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <!-- 导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- 滚动条 -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="row blocks">
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic2.jpg?imageView2/1/w/340/h/240"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg?imageView2/1/w/340/h/240"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic2.jpg?imageView2/1/w/340/h/240"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg?imageView2/1/w/340/h/240"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="#" class="thumbnail pic">
+                    <img src="../public/img/index/pic.jpg"
+                         alt="通用的占位符缩略图">
+                    <div class="title">
+                        <h3>
+                            洗发水超好用
+                        </h3>
+                        <span>
+                            这个搞活动到4.6号，原价128呢，头皮洗的很舒服，白色，粉色特...
+                        </span>
+                        <small>
+                            购物狂
+                        </small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer darkblue-back white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <p class="copyright">Copyright © 2016 - 郝锦</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-back"></div>
+</body>
+</html>

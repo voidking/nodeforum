@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/group/follow.css">
+    <script src="/js/group/follow.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+<div class="content">
+    <div class="myfollow-body">
+        <% if(adminGroups.length>0){%>
+        <div class="title">
+            <span>我管理的群组</span>
+        </div>
+        <div class="blocks">
+            <% adminGroups.forEach(function(group){%>
+            <a href="/group/<%= group._id%>" class="item">
+                <span class="left">
+                    <img src="<%= group.head_image%>" alt=""/>
+                </span>
+                <span class="right">
+                    <div class="group-name"><%= group.groupname%></div>
+                    <div class="info"><%= group.info%></div>
+                </span>
+            </a>
+            <% })%>
+        </div>
+        <div class="clearfix"></div>
+        <% }%>
+        <% if(followGroups.length > 0){%>
+        <div class="title">
+            <span>我关注的群组</span>
+        </div>
+        <div class="blocks">
+            <% followGroups.forEach(function(group){%>
+            <a href="/group/<%= group._id%>" class="item">
+                <span class="left">
+                    <img src="<%= group.head_image%>" alt=""/>
+                </span>
+                <span class="right">
+                    <div class="group-name"><%= group.groupname%></div>
+                    <div class="info"><%= group.info%></div>
+                </span>
+            </a>
+            <% })%>
+        </div>
+        <div class="clearfix"></div>
+        <% }%>
+        <div class="operation">
+            <a class="follow-new" href="/discover">
+                <img src="/img/follow/find.png" alt=""/>
+                <span>关注新群组</span>
+            </a>
+
+            <a class="create-new" href="/group-add">
+                <img src="/img/follow/create.png" alt=""/>
+                <span style="font-size: 16px;">新建群组</span>
+            </a>
+        </div>
+    </div>
+    <div class="recommend-body">
+        <div class="title">
+            <span>猜你喜欢</span>
+        </div>
+        <div class="blocks">
+            <% recommendGroups.forEach(function(group){%>
+            <a href="/group/<%= group._id%>" class="item">
+                <span class="left">
+                    <img src="<%= group.head_image%>" alt=""/>
+                </span>
+                <span class="right">
+                    <div class="group-name"><%= group.groupname%></div>
+                    <div class="info"><%= group.info%></div>
+                </span>
+            </a>
+            <% })%>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<input type="hidden" id="error" value="<%= error%>"/>
+
+<%- include ../partial/footer %>
+</body>
+</html>

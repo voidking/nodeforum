@@ -1,0 +1,16 @@
+@charset "utf-8";
+@import "font";
+@import "color";
+
+//浮动和清除
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.clearfix{
+  clear:both;
+}
+
+

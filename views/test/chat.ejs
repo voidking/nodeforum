@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>聊天</title>
+    <%- include ../partial/head %>
+    <script src="/js/test/chat.js"></script>
+    <script src="/socket.io-client/socket.io.js"></script>
+</head>
+<body>
+<form class="form-horizontal" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="from-user" class="col-sm-2 control-label">我的id</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="from-user" placeholder="请输入我的id">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <span id="adduser" class="btn btn-primary">添加用户</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <span id="deleteuser" class="btn btn-primary">删除用户</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="to-user" class="col-sm-2 control-label">对方id</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="to-user" placeholder="请输入对方id">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="content" class="col-sm-2 control-label">私信</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="content" placeholder="请输入私信内容">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <span id="sendprivate" class="btn btn-primary">发送私信</span>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

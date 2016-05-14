@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/post/post-detail.css">
+    <script src="/js/post/post-detail.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+<div class="main-body container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="title"><%= post.title%></div>
+        </div>
+    </div>
+    <div class="row layers">
+        <div class="col-sm-12 layer">
+            <div class="user" data-username="<%= post.author.username%>" data-userId="<%= post.author._id%>">
+                <span class="left">
+                    <span class="head-image">
+                        <img src="<%= post.author.head_image%>" alt=""/>
+                    </span>
+                    <span class="info">
+                        <div class="username"><%= post.author.username%></div>
+                        <div class="date"><%= post.create_at_string%></div>
+                    </span>
+                </span>
+                <span class="right">
+                    <% if(user._id == post.author._id){%>
+                    <span class="glyphicon glyphicon-trash post-delete"></span>
+                    <% }%>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="label label-info">1L</span>
+                </span>
+                <div style="clear: both;"></div>
+                <% if(post.position.open == true){%>
+                <div class="position">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    <span class="address"><%= post.position.address%></span>
+                </div>
+                <% }%>
+            </div>
+
+            <div class="content">
+                <p>
+                    <%= post.content%>
+                </p>
+                <% if(post.image_urls.length > 0){%>
+                <% post.image_urls.forEach(function(image_url){%>
+                <img src="<%= image_url%>?imageView2/0/w/800/h/600" alt=""/>
+                <% })%>
+                <% }%>
+            </div>
+        </div>
+    </div>
+    <div class="row layers comments">
+        <% comments.forEach(function(comment){%>
+        <div class="col-sm-12 layer" data-commentId="<%= comment._id%>">
+            <div class="user" data-username="<%= comment.from_user.username%>" data-userId="<%= comment.from_user._id%>">
+                <span class="left">
+                    <span class="head-image">
+                        <img src="<%= comment.from_user.head_image%>" alt=""/>
+                    </span>
+                    <span class="info">
+                        <div class="username"><%= comment.from_user.username%></div>
+                        <div class="date"><%= comment.create_at_string%></div>
+                    </span>
+                </span>
+                <span class="right">
+                    <% if(user._id == comment.from_user._id){%>
+                    <span class="glyphicon glyphicon-trash comment-delete"></span>
+                    <% }%>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="label label-info"><%= comment.floor%>L</span>
+                </span>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="content">
+                <p>
+                    <%= comment.content%>
+                </p>
+            </div>
+        </div>
+        <% })%>
+    </div>
+</div>
+
+<div id="reply">
+    <div class="to-user">To:<span></span></div>
+    <textarea class="form-control reply-content" rows="3"></textarea>
+    <div class="right">
+        <div class="btn-reply">回复</div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<div id="private">
+    <div class="to-user">To:<span></span></div>
+    <textarea class="form-control private-content" rows="3"></textarea>
+    <div class="right">
+        <div class="btn-private">发送</div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<!--js需要的值-->
+<input id="postId" type="hidden" value="<%= post._id%>"/>
+<input id="groupId" type="hidden" value="<%= post.group._id%>"/>
+<input id="userId" type="hidden" value="<%= user._id%>"/>
+
+<!--模板引擎部分-->
+<script id="layer_template" type="text/html">
+    {{each comments as comment}}
+    <div class="col-sm-12 layer" data-commentId="{{comment._id}}">
+        <div class="user" data-username="{{comment.from_user.username}}" data-userId="{{comment.from_user._id}}">
+                <span class="left">
+                    <span class="head-image">
+                        <img src="{{comment.from_user.head_image}}" alt=""/>
+                    </span>
+                    <span class="info">
+                        <div class="username">{{comment.from_user.username}}</div>
+                        <div class="date">{{comment.create_at_string}}</div>
+                    </span>
+                </span>
+                <span class="right">
+                    {{if ('<%= user._id%>' == comment.from_user._id)}}
+                    <span class="glyphicon glyphicon-trash comment-delete"></span>
+                    {{/if}}
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="label label-info">{{comment.floor}}L</span>
+                </span>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="content">
+            <p>
+                {{comment.content}}
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<%- include ../partial/footer %>
+</body>
+</html>

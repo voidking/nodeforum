@@ -1,10 +1,25 @@
 {
   "name": "nodeforum",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "graduation project",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.1.0",
+    "ejs": "^2.4.1",
+    "eventproxy": "^0.3.4",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "lodash": "^4.12.0",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.16",
+    "node-uuid": "^1.4.7",
+    "qiniu": "^6.1.10",
+    "qn": "^1.2.0",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.6",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {},
   "scripts": {
@@ -14,10 +29,14 @@
     "node",
     "forum"
   ],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/voidking/nodeforum.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voidking/nodeforum.git"
   },
   "author": "voidking",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voidking/nodeforum/issues"
+  },
+  "homepage": "https://github.com/voidking/nodeforum#readme"
 }

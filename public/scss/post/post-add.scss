@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import "../base/base";
+@import "../partial/header";
+@import "../partial/footer";
+
+#position{
+  .glyphicon{
+    font-size: 1.2rem;
+    &:hover{
+      cursor: pointer;
+    }
+    &.active{
+      color: #00B26B;
+    }
+  }
+}
+
+#baidu-address{
+  div{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:not(:last-child){
+      border-bottom: 1px solid #eee;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    &.active{
+      background-color: #aaa;
+      color: #fff;
+    }
+  }
+}
+
+.content{
+  width: 100%;
+  min-height: 650px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: url(../../img/index/noise.jpg) #f5f7fa;
+  .icon-picture{
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    background: url(../../img/post-add/add-image.png) no-repeat;
+    background-size: 100% 100%;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .icon-loading{
+    display: none;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    background: url(../../img/post-add/loading.gif) no-repeat;
+    background-size: 100% 100%;
+  }
+  .addimage{
+    display: inline-block;
+    vertical-align: middle;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  .btn-primary{
+    margin-top: 2rem;
+  }
+  .pictures{
+    .pic{
+      display: inline-block;
+      position: relative;
+      margin-right: .8rem;
+      width: 100px;
+      height: 100px;
+      .icon-delete{
+        display: inline-block;
+        position: absolute;
+        top: -.3rem;
+        right: -.3rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: .8rem;
+        background: url(../../img/post-add/delete3.png) no-repeat;
+        background-size: 100% 100%;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+
+

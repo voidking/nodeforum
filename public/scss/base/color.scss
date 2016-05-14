@@ -1,0 +1,47 @@
+//关于颜色的定义
+$gray:#eee;
+$black:#333333;
+$orange:#ff7800;
+$darkblue:#272B35;
+$green:#00B26B;
+
+.gray{
+  color:$gray;
+}
+.gray-back{
+  background: $gray;
+}
+.gray-border{
+  border: 1px solid $gray;
+}
+.black{
+  color:$black;
+}
+.black-back{
+  background: $black;
+}
+.black-border{
+  border: 1px solid $black;
+}
+.white{
+  color: white!important;
+}
+.white-back{
+  background: white;
+}
+.white-border{
+  border: 1px solid white;
+}
+.orange{
+  color: $orange;
+}
+.orange-back{
+  background: $orange;
+}
+.orange-border{
+  border: 1px solid $orange;
+}
+
+.darkblue-back{
+  background: $darkblue;
+}

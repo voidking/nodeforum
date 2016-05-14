@@ -1,0 +1,20 @@
+/* rem的基准 */
+html{ font-size: 10px;}
+@media(min-device-width:375px){
+  html{font-size: 12px;}
+}
+@media(min-device-width:414px){
+  html{font-size: 15px;}
+}
+@media (min-device-width: 768px) {
+  html{font-size: 20px;}
+}
+
+// 字号
+$fontsizemin: 1.0rem;
+$fontsizemid: 2.0rem;
+$fontsizemax: 3.0rem;
+
+*{
+  font-family: 'Microsoft YaHei';
+}

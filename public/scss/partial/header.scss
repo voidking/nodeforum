@@ -1,0 +1,393 @@
+@charset "utf-8";
+@import "../base/base";
+
+.header{
+  height: 50px;
+  .bold{
+    font-weight: 900;
+  }
+}
+
+/* 超小屏幕（手机，小于 768px） */
+@media (max-width: 767px) {
+  .my-navbar{
+    height: 52px;
+    border-radius: 0;
+    background: #FFF;
+    .navbar-header{
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      width: 100%;
+      .navbar-toggle{
+        margin-left: 20px;
+        margin-right: 0;
+        float: left;
+        border-radius: 0;
+      }
+      .logo{
+        display: inline-block;
+        .logo-icon{
+          display: inline-block;
+          vertical-align: top;
+          width: 150px;
+          height: 50px;
+          background: url(../../img/index/node.jpg) no-repeat;
+          background-size: 100%;
+        }
+      }
+//      .user{
+//        float: right;
+//        margin-right: 20px;
+//        .user-icon{
+//          display: inline-block;
+//          vertical-align: middle;
+//          width: 35px;
+//          height: 35px;
+//          background: url(../img/index/me.png) no-repeat;
+//          background-size: 100%;
+//        }
+//      }
+      .user-thin{
+        float: right;
+        margin-right: 20px;
+        height: 50px;
+        line-height: 50px;
+        .user-icon{
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          line-height: 30px;
+          border-radius: 20px;
+          vertical-align: middle;
+          overflow: hidden;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .about-me{
+          display: none;
+          position: absolute;
+          z-index: 10;
+          width: 80px;
+          height: 100px;
+          background: white;
+          right: -1px;
+          a{
+            text-decoration: none;
+          }
+          .my{
+            text-align: center;
+            border-bottom: 1px solid blue;
+          }
+          .logout{
+            text-align: center;
+          }
+        }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    .main-nav{
+      position: fixed;
+      z-index: 8;
+      left: 0;
+      bottom: 0;
+      background: #FFF;
+      width: 100%;
+      .nav{
+        .logo{
+          display: none;
+        }
+        li{
+          float: left;
+          width: 25%;
+          text-align: center;
+          &.active{
+            background: $gray;
+          }
+          a{
+            padding: 15px 15px;
+          }
+        }
+        &.navbar-right{
+          display: none;
+        }
+      }
+    }
+  }
+  .footer-back{
+    width: 100%;
+    height: 50px;
+  }
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  .my-navbar {
+    height: 52px;
+    border-radius: 0;
+    background: #FFF;
+    .user-thin{
+      .user-icon{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .about-me{
+        display: none;
+        position: absolute;
+        z-index: 10;
+        width: 80px;
+        height: 100px;
+        background: white;
+        right: -1px;
+        a{
+          text-decoration: none;
+        }
+        .my{
+          text-align: center;
+          border-bottom: 1px solid blue;
+        }
+        .logout{
+          text-align: center;
+        }
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .main-nav {
+      .nav {
+        &.navbar-left{
+          margin-left: -56px;
+        }
+        .logo{
+          float: left;
+          margin-right: 10px;
+          vertical-align: middle;
+          .logo-icon{
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            background: url(../../img/index/node.jpg) no-repeat;
+            background-size: 100%;
+            -webkit-background-size: 100%;
+          }
+        }
+        li {
+          float: left;
+          text-align: center;
+          &.active{
+            background: $gray;
+          }
+          a {
+            padding: 15px 15px;
+          }
+        }
+        .user{
+          float: right;
+          margin-right: 20px;
+          height: 50px;
+          line-height: 50px;
+          .user-icon{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 30px;
+            border-radius: 20px;
+            vertical-align: middle;
+            overflow: hidden;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .about-me{
+            display: none;
+            position: absolute;
+            z-index: 10;
+            width: 80px;
+            height: 100px;
+            background: white;
+            right: -1px;
+            a{
+              text-decoration: none;
+            }
+            .my{
+              text-align: center;
+              border-bottom: 1px solid blue;
+            }
+            .logout{
+              text-align: center;
+            }
+          }
+          &:hover{
+            cursor: pointer;
+            .about-me{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px){
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+}
+
+.register-body{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  margin:auto;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  width:16rem;
+  height:15rem;
+  background: white;
+  border: $gray;
+  .title{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-bottom: 1px solid $gray;
+  }
+  .input-group{
+    margin: 0.4rem 0.9rem 0 0.9rem;
+    .form-control{
+      height: 2rem;
+      margin-top: 0.6rem;
+      border-radius: 4px !important;
+    }
+  }
+  .my-btn{
+    margin-top: 1.3rem;
+    .btn-register{
+      margin-right: .5rem;
+      display: inline-block;
+      vertical-align: top;
+      padding: .3rem .7rem;
+      background-color: #039153;
+      color: #fff;
+      font-size: .8rem;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .btn-cancel{
+      display: inline-block;
+      vertical-align: top;
+      padding: .3rem .7rem;
+      background-color: #ccc;
+      color: #fff;
+      font-size: .8rem;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .error{
+    display: none;
+    color: red;
+    font-size: .8rem;
+  }
+  .log{
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    font-size: .8rem;
+  }
+}
+.login-body{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  margin:auto;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  width:16rem;
+  height:12.5rem;
+  background: white;
+  border: $gray;
+  .title{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-bottom: 1px solid $gray;
+  }
+  .input-group{
+    margin: 0.4rem 0.9rem 0 0.9rem;
+    .form-control{
+      height: 2rem;
+      margin-top: 0.6rem;
+      border-radius: 4px !important;
+    }
+  }
+  .my-btn{
+    margin-top: 1.3rem;
+    .btn-login{
+      margin-right: .5rem;
+      display: inline-block;
+      vertical-align: top;
+      padding: .3rem .7rem;
+      background-color: #039153;
+      color: #fff;
+      font-size: .8rem;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .btn-cancel{
+      display: inline-block;
+      vertical-align: top;
+      padding: .3rem .7rem;
+      background-color: #ccc;
+      color: #fff;
+      font-size: .8rem;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .error{
+    display: none;
+    color: red;
+    font-size: .8rem;
+  }
+  .reg{
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    font-size: .8rem;
+  }
+}
+.backpop{
+  display: none;
+  position: fixed;
+  left:0px;
+  top:0px;
+  z-index:99;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0.5 !important;
+}

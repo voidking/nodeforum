@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,IAAI,CAAE,SAAS,CAAE,IAAI,CACrB,gCAA8B,CAC5B,IAAI,CAAC,SAAS,CAAE,IAAI,EAEtB,gCAA8B,CAC5B,IAAI,CAAC,SAAS,CAAE,IAAI,EAEtB,gCAAiC,CAC/B,IAAI,CAAC,SAAS,CAAE,IAAI,EAQtB,CAAC,CACC,WAAW,CAAE,iBAAiB",
+"sources": ["../../scss/base/font.scss"],
+"names": [],
+"file": "font.css"
+}

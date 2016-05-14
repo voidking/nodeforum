@@ -1,0 +1,112 @@
+<div class="header">
+    <div id="w-loading"><div style="width: 100%; display: none;"></div></div>
+    <nav class="navbar navbar-default my-navbar">
+        <div class="navbar-header">
+            <button class="navbar-toggle" aria-expanded="false" type="button" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="logo">
+                <a class="logo-icon" href="/"></a>
+            </span>
+            <% if(user){%>
+            <span class="user-thin">
+                <span class="user-icon">
+                    <img src="<%= user.head_image%>" alt=""/>
+                </span>
+                <div class="about-me" style="display: none;">
+                    <div class="my">
+                        <a href="/user/home">个人中心</a>
+                    </div>
+                    <div class="logout">
+                        <a href="/logout">退出登录</a>
+                    </div>
+                </div>
+            </span>
+            <% }else{%>
+            <span class="user">
+                <span class="user-icon login">
+                    <img src="/img/index/me.png" alt=""/>
+                </span>
+            </span>
+            <% }%>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse in">
+            <div class="main-nav" >
+                <ul class="nav navbar-left">
+                    <span class="logo">
+                        <a class="logo-icon" href="/"></a>
+                    </span>
+                    <li class="">
+                        <a href="/">首页</a>
+                    </li>
+                    <li class="">
+                        <a href="/follow">关注</a>
+                    </li>
+                    <li>
+                        <a href="/discover">发现</a>
+                    </li>
+                    <li class="">
+                        <a href="/message">消息</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <% if(user){%>
+                    <span class="user">
+                        <span class="user-icon">
+                            <img src="<%= user.head_image%>" alt=""/>
+                        </span>
+                        <div class="about-me">
+                            <div class="my">
+                                <a href="/user/home">个人中心</a>
+                            </div>
+                            <div class="logout">
+                                <a href="/logout">退出登录</a>
+                            </div>
+                        </div>
+                    </span>
+                    <% }else{%>
+                    <li><a class="login" href="#">登录</a></li>
+                    <li><a class="register" href="#">注册</a></li>
+                    <% }%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="register-body">
+    <div class="title">
+        <span>注册</span>
+    </div>
+
+    <form class="input-group" role="form" method="post" action="/register">
+        <input type="text" class="form-control" placeholder="请输入用户名" name="username">
+        <input type="password" class="form-control" placeholder="请输入密码" name="password">
+        <input type="password" class="form-control" placeholder="请再次确认密码" name="password2">
+        <div class="fr my-btn">
+            <span class="btn-register" type="submit">注册</span>
+            <span class="btn-cancel">取消</span>
+        </div>
+        <div class="error">
+        </div>
+        <span class="log"><a href="javascript:void(0);">已有账号？去登录</a></span>
+    </form>
+</div>
+<div class="login-body">
+    <div class="title">
+        <span>登录</span>
+    </div>
+    <form class="input-group" role="form" method="post" action="/login">
+        <input type="text" class="form-control" placeholder="请输入用户名" name="username">
+        <input type="password" class="form-control" placeholder="请输入密码" name="password">
+        <div class="fr my-btn">
+            <span class="btn-login" type="submit">登录</span>
+            <span class="btn-cancel">取消</span>
+        </div>
+        <div class="error"></div>
+        <span class="reg"><a href="javascript:void(0);">没有账号？去注册</a></span>
+    </form>
+</div>
+<div class="backpop"></div>
+<input id="host" type="hidden" value="<%= host%>"/>

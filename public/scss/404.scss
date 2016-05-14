@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import "base/base";
+
+.content{
+  text-align: center;
+  height: 100vh;
+  .pic{
+    position: relative;
+    margin-top: 5rem;
+    display: inline-block;
+    width: 20.8rem;
+    height: 16.7rem;
+    background: url(../img/404/404.jpg);
+    background-size: 100% 100%;
+    div{
+      position: absolute;
+      width: 19rem;
+      right:0;
+      &.sorry{
+        top: 2rem;
+        text-align: center;
+        font-size: 1.4rem;
+        color: red;
+      }
+      &.jump{
+        top: 4rem;
+        font-size: 1.2rem;
+        text-align: center;
+        span{
+          color: red;
+        }
+      }
+    }
+  }
+}

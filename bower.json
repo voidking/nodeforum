@@ -1,0 +1,29 @@
+{
+  "name": "nodeforum",
+  "description": "graduation project",
+  "main": "app.js",
+  "authors": [
+    "voidking"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "forum"
+  ],
+  "homepage": "https://github.com/voidking/nodeforum",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "art-template": "^3.0.1",
+    "layer": "*",
+    "bootstrap-fileinput": "^4.3.1",
+    "bootstrap-sass": "^3.3.6",
+    "bootstrap": "^3.3.6",
+    "Swiper": "swiper#^3.3.1"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/post/post-add.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BC46e2b24290dba4d0267e2430f512fe"></script>
+    <script src="/js/post/post-add.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+
+<div class="content container">
+    <form class="form-horizontal" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">标题</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="title" placeholder="这样的标题肯定没有见过">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="content" class="col-sm-2 control-label">内容</label>
+            <div class="col-sm-9">
+                <textarea class="form-control" id="content" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="picture" class="col-sm-2 control-label">图片</label>
+            <div class="col-sm-9">
+                <!--<input id="image"  type="file" multiple>-->
+                <input type="file" id="picture" style="display: none;" />
+                <span class="icon-picture"></span>
+                <span class="icon-loading"></span>
+                <span class="addimage">添加图片</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9">
+                <div class="pictures">
+                    <!--动态插入图片-->
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="position" class="col-sm-2 control-label">位置</label>
+            <div class="col-sm-9" id="position">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                <span class="address"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9">
+                <span class="btn btn-primary" id="confirm">发布</span>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div id="allmap" style="display: none;"></div>
+<div id="baidu-address">
+    <div class="no-address item active" data-address="">不显示位置</div>
+    <div class="address item" data-address=""></div>
+</div>
+
+<script id="pic_template" type="text/html">
+    <span class="pic">
+        <img src="{{imgurl}}?imageView2/1/w/100/h/100">
+        <span class="icon-delete"></span>
+    </span>
+</script>
+<input type="hidden" id="author_id" value="<%= user._id%>"/>
+<input type="hidden" id="group_id" value="<%= group_id%>"/>
+<%- include ../partial/footer %>
+</body>
+</html>

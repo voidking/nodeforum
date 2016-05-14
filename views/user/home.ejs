@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/user/home.css">
+    <script src="/js/user/home.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+
+<div class="content container">
+    <div class="title-select">
+        <span class="tab-title atme-title active" data-id="head-image">我的头像</span>
+        <span class="tab-title letter-title" data-id="info">个人资料</span>
+        <span class="tab-title" data-id="pwd">修改密码</span>
+    </div>
+    <div class="blocks">
+        <div id="head-image" class="tab head-image-content">
+            <ul>
+                <li>
+                    <div>
+                        <h3>原始图片</h3>
+                        <small>图片最小300x300，再小就不美啦</small>
+                        <canvas id="cropper"></canvas>
+                        <div id="choose-image"><i class="glyphicon glyphicon-picture"></i>上传图片</div>
+                        <input type="file" id="input" size="10" style="visibility:hidden;" />
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>预览图片</h3>
+                        <small>好看吧！</small>
+                        <canvas id="preview100"></canvas>
+                        <div id="save-image" class=""> 保存 </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="info" class="tab info-content">
+            <form class="form-horizontal" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="username" disabled="true" placeholder="请输入用户名" value="<%= user.username%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="intro" class="col-sm-2 control-label">签名</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="intro" rows="5" placeholder="写点什么吧"><%= user.intro%></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-2">
+                        <div id="save-info">保存</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="pwd" class="tab pwd-content">
+            <form class="form-horizontal" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="pwd-old" class="col-sm-2 control-label">旧密码</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="pwd-old" placeholder="请输入旧密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd-new" class="col-sm-2 control-label">新密码</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="pwd-new" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd-again" class="col-sm-2 control-label">再次输入</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="pwd-again" placeholder="请再次输入新密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-2">
+                        <div id="save-pwd">保存</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ../partial/footer %>
+</body>
+</html>

@@ -1,0 +1,127 @@
+@charset "utf-8";
+@import "../base/base";
+@import "../partial/header";
+@import "../partial/footer";
+
+
+.content{
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: url(../../img/index/noise.jpg) #f5f7fa;
+  .title-select{
+    margin-left: 30px;
+    font-size: 24px;
+    .post-title,.group-title{
+      color: $green;
+      &:hover{
+        cursor: pointer;
+      }
+      &.active{
+        color: $black;
+      }
+    }
+  }
+  .post-content{
+//    display: none;
+    margin-left: 30px;
+    margin-top: 10px;
+    .block{
+      //text-align: center;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      .pic{
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        img{
+          //min-width: 340px;
+          //min-height: 240px;
+        }
+        .title{
+          position: absolute;
+          text-align: left;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          padding: 20px;
+          color: white;
+          small{
+            display: block;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+  .group-content{
+    display: none;
+    margin-left: 30px;
+    margin-top: 10px;
+    a.item{
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      border: 1px solid $gray;
+      width: 290px;
+      height: 60px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #ffffff;
+      color: $black;
+      text-decoration: none;
+      .left{
+        display: inline-block;
+        vertical-align: top;
+        width: 60px;
+        height: 60px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .right{
+        margin-left: -5px;
+        display: inline-block;
+        vertical-align: top;
+        width: 180px;
+        height: 60px;
+        .group-name{
+          margin-left: 10px;
+          margin-top: 6px;
+          font-size: 15px;
+          font-weight: bold;
+          width: 155px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .info{
+          margin-left: 10px;
+          margin-top: 4px;
+          width: 155px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: #999;
+        }
+      }
+      .follow{
+        margin-top: 15px;
+        display: inline-block;
+        padding: 4px 5px;
+        background: $green;
+        color: white;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/group/group-add.css">
+    <script src="/js/group/group-add.js"></script>
+</head>
+
+<body onload="init();">
+<%- include ../partial/header %>
+
+<div class="content container">
+    <form class="form-horizontal" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="groupname" class="col-sm-2 control-label">群组名</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="groupname" placeholder="群组名一定要拉风">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="info" class="col-sm-2 control-label">群组简介</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="info" placeholder="这里还是写点什么比较好">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="head-image" class="col-sm-2 control-label">群组头像</label>
+            <div class="col-sm-9">
+                <canvas id="cropper"></canvas>
+                <!--<canvas id="preview180"></canvas>-->
+                <canvas id="preview100"></canvas>
+                <canvas id="preview50"></canvas>
+                <div class="operation">
+                    <span class="btn btn-default" id="selectBtn" onclick="document.getElementById('input').click();">选择</span>
+                    <span class="btn btn-default" id="rotateLeftBtn" onclick="rotateImage(event);">左旋转</span>
+                    <span class="btn btn-default" id="rotateRightBtn" onclick="rotateImage(event);">右旋转</span>
+                    <input type="file" id="input" size="10" style="visibility:hidden;" onchange="selectImage(this.files)" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9">
+                <span class="btn btn-primary" onclick="saveImage();" >确认</span>
+            </div>
+        </div>
+
+    </form>
+</div>
+<input type="hidden" id="admin_id" value="<%= user._id%>"/>
+<%- include ../partial/footer %>
+</body>
+</html>

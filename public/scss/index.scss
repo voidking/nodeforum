@@ -1,0 +1,58 @@
+@charset "utf-8";
+@import "base/base";
+@import "partial/header";
+@import "partial/footer";
+
+.banner{
+  width: 100%;
+  height:450px;
+  background: url(../img/index/main-bg.jpg) no-repeat;
+  background-size: cover;
+  .swiper-container{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.content{
+  width: 100%;
+  min-height: 650px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: url(../img/index/noise.jpg) #f5f7fa;
+  .blocks{
+    //width: 98%;
+    //margin: 0 auto;
+    .block{
+      text-align: center;
+      .pic{
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        img{
+          //min-width: 340px;
+          //min-height: 240px;
+        }
+        .title{
+          position: absolute;
+          text-align: left;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          padding: 20px;
+          color: white;
+          small{
+            display: block;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

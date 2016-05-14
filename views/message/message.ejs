@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/message/message.css">
+    <script src="/js/message/message.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+
+<div class="content container">
+    <div class="title-select">
+        <span class="tab-title atme-title active" data-id="atme">@我</span>
+        <span class="tab-title letter-title" data-id="letter">私信</span>
+        <span class="write-private" style="display: none;">写私信</span>
+    </div>
+    <div class="blocks">
+        <div id="atme" class="tab atme-content">
+            <% ats.forEach(function(at){%>
+            <a class="row block" href="/post/<%= at.post._id%>" target="_blank">
+                <div class="left">
+                    <span class="head">
+                        <img src="<%= at.from_user.head_image%>" alt=""/>
+                    </span>
+                </div>
+                <div class="right">
+                    <div class="name"><%= at.post.title%></div>
+                    <div class="at"><%= at.from_user.username%>@了我：</div>
+                    <div class="info"><%= at.content%></div>
+                    <div class="date"><%= at.create_at_string%></div>
+                </div>
+            </a>
+            <% })%>
+        </div>
+        <div id="letter" class="tab letter-content">
+            <% newmsgs.forEach(function(message){%>
+            <div class="row block">
+                <div class="left">
+                    <span class="head">
+                        <% if(user._id == message.from_user._id){%>
+                            <input id="friendname" type="hidden" value="<%= message.to_user.username%>"/>
+                            <input id="friend-id" type="hidden" value="<%= message.to_user._id%>"/>
+                            <img src="<%= message.to_user.head_image%>" alt=""/>
+                        <% }else{%>
+                            <input id="friendname" type="hidden" value="<%= message.from_user.username%>"/>
+                            <input id="friend-id" type="hidden" value="<%= message.from_user._id%>"/>
+                            <img src="<%= message.from_user.head_image%>" alt=""/>
+                        <% }%>
+                    </span>
+                </div>
+                <div class="right">
+                    <% if(user._id == message.from_user._id){%>
+                    <div class="name"><%= message.to_user.username%></div>
+                    <% }else{%>
+                    <div class="name"><%= message.from_user.username%></div>
+                    <% }%>
+                    <div class="info"><%= message.content%></div>
+                    <div class="date"><%= message.create_at_string%></div>
+                </div>
+            </div>
+            <% })%>
+        </div>
+    </div>
+</div>
+<div id="private">
+    <form class="form-horizontal" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="to-user" class="col-sm-2 control-label">To：</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="to-user" placeholder="用户名">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <textarea class="form-control private-content" id="send-content" rows="3"></textarea>
+            </div>
+        </div>
+    </form>
+
+    <div class="right">
+        <div class="btn-private">发送</div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<!--js部分需要用到的值-->
+<input id="from-user" type="hidden" value="<%= user._id%>"/>
+
+<div id="chat">
+    <div class="records">
+        <div class="left record" style="clear: both;">
+            <span class="img">
+                <img src="/img/index/default-head2.jpg" alt=""/>
+            </span>
+            <span class="msg-content">你好，哈哈</span>
+        </div>
+        <div class="right record">
+            <span class="msg-content">你好，哈哈</span>
+            <span class="img">
+                <img src="/img/index/default-head2.jpg" alt=""/>
+            </span>
+        </div>
+        <div class="left record" style="clear: both;">
+            <span class="img">
+                <img src="/img/index/default-head2.jpg" alt=""/>
+            </span>
+            <span class="msg-content">你好，哈哈</span>
+        </div>
+    </div>
+    <div class="msg">
+        <textarea class="form-control reply-content" rows="3"></textarea>
+        <span class="sendmsg">发送</span>
+    </div>
+</div>
+<!--模板引擎部分-->
+<script id="chat_template" type="text/html">
+    <div class="records">
+        {{each messages as message}}
+        {{if (message.from_user._id == '<%= user._id%>')}}
+        <div class="right record" style="clear: both;">
+            <span class="msg-content">{{message.content}}</span>
+            <span class="img">
+                <img src="{{message.from_user.head_image}}" alt=""/>
+            </span>
+        </div>
+        {{else}}
+        <div class="left record" style="clear: both;">
+            <span class="img">
+                <img src="{{message.from_user.head_image}}" alt=""/>
+            </span>
+            <span class="msg-content">{{message.content}}</span>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+    <div class="msg">
+        <textarea class="form-control reply-content" rows="3"></textarea>
+        <span class="sendmsg">发送</span>
+    </div>
+</script>
+
+<script id="sendmsg_template" type="text/html">
+    <div class="right record" style="clear: both;">
+        <span class="msg-content">{{content}}</span>
+        <span class="img">
+            <img src="<%= user.head_image%>" alt=""/>
+        </span>
+    </div>
+</script>
+
+<script id="receivemsg_template" type="text/html">
+    <div class="left record" style="clear: both;">
+        <span class="img">
+            <img src="{{friend.head_image}}" alt=""/>
+        </span>
+        <span class="msg-content">{{content}}</span>
+    </div>
+</script>
+
+<%- include ../partial/footer %>
+</body>
+</html>
