@@ -250,13 +250,6 @@
 
 .register-body{
   display: none;
-  position: fixed;
-  z-index: 100;
-  margin:auto;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
   width:16rem;
   height:15rem;
   background: white;
@@ -316,13 +309,13 @@
 }
 .login-body{
   display: none;
-  position: fixed;
-  z-index: 100;
-  margin:auto;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
+  //position: fixed;
+  //z-index: 100;
+  //margin:auto;
+  //left:0;
+  //right:0;
+  //top:0;
+  //bottom:0;
   width:16rem;
   height:12.5rem;
   background: white;

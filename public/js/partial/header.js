@@ -3,21 +3,40 @@
  */
 
 $(function(){
+    var register_index = 0;
+    var login_index = 0;
     //弹出注册窗口
     $('.register').click(function(){
-        $('.backpop').show();
-        $('.register-body').show();
+        register_index = layer.open({
+            type: 1,
+            title: false,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: $('.register-body')
+        });
     });
+
     //隐藏注册窗口
     $('.register-body .btn-cancel').click(function(){
-        $('.backpop').hide();
-        $('.register-body').hide();
+        layer.close(register_index);
     });
+
     //从注册框跳转登录框
     $('.register-body .log').click(function(){
-        $('.register-body').hide();
-        $('.login-body').show();
+        layer.close(register_index);
+        login_index = layer.open({
+            type: 1,
+            title: false,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: $('.login-body')
+        });
     });
+
     //确认注册
     $('.register-body .btn-register').click(function(event){
         event.preventDefault();
@@ -47,8 +66,16 @@ $(function(){
                 if(data.state==1){
                     layer.msg('注册成功,请登录！');
                     setTimeout(function(){
-                        $('.register-body').hide();
-                        $('.login-body').show();
+                        layer.close(register_index);
+                        login_index = layer.open({
+                            type: 1,
+                            title: false,
+                            skin: 'layui-layer-demo', //样式类名
+                            closeBtn: 0, //不显示关闭按钮
+                            shift: 2,
+                            shadeClose: true, //开启遮罩关闭
+                            content: $('.login-body')
+                        });
                     },1000);
                 }else{
                     $('.register-body .error').html('用户名已经注册！');
@@ -67,18 +94,32 @@ $(function(){
 
     //弹出登录窗口
     $('.login').click(function(){
-        $('.backpop').show();
-        $('.login-body').show();
+        login_index = layer.open({
+            type: 1,
+            title: false,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: $('.login-body')
+        });
     });
     //隐藏登录窗口
     $('.login-body .btn-cancel').click(function(){
-        $('.backpop').hide();
-        $('.login-body').hide();
+        layer.close(login_index);
     });
     //从登录框跳转注册框
     $('.login-body .reg').click(function(){
-        $('.login-body').hide();
-        $('.register-body').show();
+        layer.close(login_index);
+        register_index = layer.open({
+            type: 1,
+            title: false,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: $('.register-body')
+        });
     });
     //确认登录
     $('.login-body .btn-login').click(function(event){
