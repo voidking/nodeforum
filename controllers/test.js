@@ -35,3 +35,10 @@ exports.baidu_map = function(req, res){
     });
 }
 
+// 分享
+exports.share = function(req, res){
+    res.render('./test/share',{
+        title: '分享'
+    });
+}
+

@@ -15,6 +15,7 @@ var GroupCollect = require('../models/group-collect-model');
 var Post = require('../models/post-model');
 var Comment = require('../models/comment-model');
 var At = require('../models/at-model');
+var PostCollect = require('../models/post-collect-model');
 
 var request = require('request');
 var lodash = require('lodash');
@@ -44,6 +45,7 @@ exports.post_add_api = function(req,res){
     });
 }
 
+// 删除帖子
 exports.post_delete_api = function(req, res){
     var postId = req.body.postId;
     Post.findById(postId,function(err,post){
@@ -145,8 +147,11 @@ exports.qn_upload = function(req,res){
     });
 }
 
+
+// 帖子详情
 exports.post_detail = function(req, res){
     var postId = req.params.id;
+    var userId = req.session.user._id;
     Post.findById(postId,function(err, post){
         if(post){
             // 直接修改create_at无效，所以添加一个属性
@@ -162,14 +167,28 @@ exports.post_detail = function(req, res){
                 }else{
                     comments = [];
                 }
-                res.render('./post/post-detail',{
-                    title: '帖子详情',
-                    user: req.session.user,
-                    host: config.host,
-                    success: req.flash('success').toString(),
-                    error: req.flash('error').toString(),
-                    post: post,
-                    comments: comments
+                PostCollect.findByUserId(userId,function(err,collect){
+                    if(!collect){
+                        collect = {};
+                        collect.posts = [];
+                    }
+                    var star = false;
+                    for(var i=0;i<collect.posts.length;i++){
+                        if(postId==collect.posts[i]._id){
+                            star = true;
+                        }
+                    }
+                    res.render('./post/post-detail',{
+                        //title: '帖子详情',
+                        title: post.title + '-' + post.group.groupname,
+                        user: req.session.user,
+                        host: config.host,
+                        success: req.flash('success').toString(),
+                        error: req.flash('error').toString(),
+                        post: post,
+                        comments: comments,
+                        star: star
+                    });
                 });
             });
         }else{
@@ -178,6 +197,7 @@ exports.post_detail = function(req, res){
     });
 }
 
+// 评论帖子api
 exports.comment_add_api = function(req, res){
     var post = req.body.postId;
     var from_user = req.session.user._id;
@@ -209,6 +229,8 @@ exports.comment_add_api = function(req, res){
     });
 }
 
+
+// 获取所有评论api
 exports.comment_getall_api = function(req, res){
     var postId = req.body.postId;
     Comment.findByPostId(postId,function(err,comments){
@@ -239,7 +261,7 @@ exports.comment_delete_api = function(req, res){
     });
 }
 
-// @其他用户
+// @其他用户api
 exports.at_add_api = function(req, res){
     var from_user = req.session.user._id;
     var usernames = lodash.isArray(req.body.usernames)?req.body.usernames:[req.body.usernames];
@@ -267,4 +289,111 @@ exports.at_add_api = function(req, res){
             state: 1
         });
     }
+}
+
+// 举报帖子api，类似于@其他用户
+exports.post_report_api = function(req, res){
+    var from_user = req.session.user._id;
+    var to_user = req.body.adminId;
+    var post = req.body.postId;
+    var param = {
+        from_user: from_user,
+        to_user: to_user,
+        post: post,
+        content: '举报'
+    };
+    var new_at = new At(param);
+    if(new_at.save()){
+        res.json({
+            state: 1
+        });
+    }
+}
+
+// 收藏帖子
+exports.star_add_api = function(req, res){
+    var postId = req.body.postId;
+    var userId = req.session.user._id;
+    PostCollect.findByUserId(userId,function(err,collect){
+        if(!collect){
+            var newCollect = new PostCollect({
+                user_id: userId,
+                posts: [postId]
+            });
+            newCollect.save();
+            res.json({
+                state: 1
+            });
+        }else{
+            collect.posts.push(postId);
+            collect.save();
+            res.json({
+                state: 1
+            });
+        }
+    });
+}
+
+// 取消收藏帖子
+exports.star_delete_api = function(req, res){
+    var postId = req.body.postId;
+    var userId = req.session.user._id;
+    PostCollect.findByUserId(userId,function(err,collect){
+        for(var i=0;i<collect.posts.length;i++){
+            if(collect.posts[i]._id == postId){
+                collect.posts.remove(postId);
+                collect.save();
+                res.json({
+                    state: 1
+                });
+            }
+        }
+    });
+}
+
+// 我的收藏
+exports.mystar = function(req, res){
+    var userId = req.session.user._id;
+    PostCollect.findByUserId(userId,function(err,collect){
+        if(!collect){
+            collect = {};
+            collect.posts = [];
+        }
+        var postIds = [];
+        for(var i=0;i< collect.posts.length;i++){
+            var id = collect.posts[i]._id;
+            postIds.push(id);
+        }
+        Post.findByPostIds(postIds,function(err, posts){
+            if(!posts){
+                posts = [];
+            }
+            res.render('./post/mystar',{
+                title: '我的收藏',
+                user: req.session.user,
+                host: config.host,
+                success: req.flash('success').toString(),
+                error: req.flash('error').toString(),
+                posts: posts
+            });
+        });
+    });
+}
+
+// 我的帖子
+exports.mypost = function(req, res){
+    var userId = req.session.user._id;
+    Post.findByAuthorId(userId,function(err, posts){
+        if(!posts){
+            posts = [];
+        }
+        res.render('./post/mypost',{
+            title: '我的帖子',
+            user: req.session.user,
+            host: config.host,
+            success: req.flash('success').toString(),
+            error: req.flash('error').toString(),
+            posts: posts
+        });
+    });
 }

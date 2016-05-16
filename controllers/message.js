@@ -72,10 +72,16 @@ exports.message = function(req, res){
 }
 
 exports.message_add_api = function(req, res){
+    var from_user = req.body.from_user;
+    var to_user = req.body.to_user;
+    var content = req.body.content;
+    if(from_user == to_user){
+        // 默认可以发给自己
+    }
     var param = {
-        from_user: req.body.from_user,
-        to_user: req.body.to_user,
-        content: req.body.content
+        from_user: from_user,
+        to_user: to_user,
+        content: content
     };
     var message = new Message(param);
     message.save();

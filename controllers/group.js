@@ -45,7 +45,8 @@ exports.group_detail = function(req,res){
             }
             Post.findByGroupId(groupId,function(err,posts){
                 res.render('./group/group-detail',{
-                    title: '群组详情',
+                    //title: '群组详情',
+                    title: group.groupname,
                     user: req.session.user,
                     host: config.host,
                     success: req.flash('success').toString(),

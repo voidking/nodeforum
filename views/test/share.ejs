@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>分享</title>
+    <meta name="description" content="这里就是分享的内容，吼吼">
+    <%- include ../partial/head %>
+    <style>
+        .jiathis_style_24x24{
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $('#show-share').click(function(){
+                layer.open({
+                    type: 1,
+                    title: ['分享','text-align:center;padding: 0;'],
+                    skin: 'layui-layer-demo', //样式类名
+                    closeBtn: 0, //不显示关闭按钮
+                    shift: 2,
+                    shadeClose: true, //开启遮罩关闭
+                    content: $('.share-body')
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+<button id="show-share">分享</button>
+<!-- JiaThis Button BEGIN -->
+<div class="share-body" style="display: none;">
+    <div class="jiathis_style_24x24">
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_renren"></a>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</body>
+</html>

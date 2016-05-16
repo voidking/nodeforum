@@ -41,6 +41,10 @@ PostSchema.statics= {
     },
     findTen: function(cb){
         return this.find({}).limit(10).exec(cb);
+    },
+    findByPostIds: function(postIds,cb){
+        return this.find({_id:{$in: postIds}})
+            .exec(cb);
     }
 };
 

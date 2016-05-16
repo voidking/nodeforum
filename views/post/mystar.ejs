@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <%- include ../partial/head %>
+    <link rel="stylesheet" href="/css/post/mystar.css">
+    <script src="/js/post/mystar.js"></script>
+</head>
+
+<body>
+<%- include ../partial/header %>
+
+<div class="banner-body">
+    <h3>我的收藏</h3>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row blocks">
+            <% posts.forEach(function(post){%>
+            <div class="col-sm-6 col-md-4 block">
+                <a href="/post/<%= post._id%>" class="thumbnail pic">
+                    <% if(post.image_urls.length > 0){%>
+                    <img src="<%= post.image_urls[0]%>?imageView2/1/w/340/h/240"
+                         alt="">
+                    <% }else{%>
+                    <img src="/img/index/pic3.png"
+                         alt="">
+                    <% }%>
+                    <div class="title">
+                        <h3>
+                            <%= post.title%>
+                        </h3>
+                        <span>
+                            <%= post.content%>
+                        </span>
+                        <small>
+                            <%= post.group.groupname%>
+                        </small>
+                    </div>
+                </a>
+            </div>
+            <% })%>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="error" value="<%= error%>"/>
+<%- include ../partial/footer %>
+</body>
+</html>

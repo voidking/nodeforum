@@ -2,12 +2,34 @@
 <html>
 <head lang="zh-CN">
     <%- include ../partial/head %>
+    <meta name="description" content="<%= post.content%>">
     <link rel="stylesheet" href="/css/post/post-detail.css">
     <script src="/js/post/post-detail.js"></script>
 </head>
 
 <body>
 <%- include ../partial/header %>
+<div class="banner-body">
+    <span class="icon-star has-star" style="display: none;">
+        <i class="glyphicon glyphicon-star" style="color: #00B26B;"></i>
+        <span class="font" style="color: #00B26B;">已收藏</span>
+    </span>
+    <span class="icon-star not-star">
+        <i class="glyphicon glyphicon-star-empty"></i>
+        <span class="font">收藏</span>
+    </span>
+    <span class="icon-report">
+        <i class="glyphicon glyphicon-bell"></i>
+        <span class="font">举报</span>
+    </span>
+    <span class="icon-share">
+        <i class="glyphicon glyphicon-share-alt"></i>
+        <span class="font">分享</span>
+    </span>
+    <span class="group">
+        首发于&nbsp;<a href="/group/<%= post.group._id%>"><%= post.group.groupname%></a>
+    </span>
+</div>
 <div class="main-body container">
     <div class="row">
         <div class="col-sm-12">
@@ -31,7 +53,7 @@
                     <span class="glyphicon glyphicon-trash post-delete"></span>
                     <% }%>
                     <span class="glyphicon glyphicon-comment"></span>
-                    <span class="label label-info">1L</span>
+                    <span class="floor">1L</span>
                 </span>
                 <div style="clear: both;"></div>
                 <% if(post.position.open == true){%>
@@ -72,7 +94,7 @@
                     <span class="glyphicon glyphicon-trash comment-delete"></span>
                     <% }%>
                     <span class="glyphicon glyphicon-comment"></span>
-                    <span class="label label-info"><%= comment.floor%>L</span>
+                    <span class="floor"><%= comment.floor%>L</span>
                 </span>
                 <div style="clear: both;"></div>
             </div>
@@ -104,10 +126,22 @@
     <div style="clear: both;"></div>
 </div>
 
+<div id="share" style="display: none;">
+    <div class="jiathis_style_32x32">
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_renren"></a>
+    </div>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+
 <!--js需要的值-->
 <input id="postId" type="hidden" value="<%= post._id%>"/>
 <input id="groupId" type="hidden" value="<%= post.group._id%>"/>
 <input id="userId" type="hidden" value="<%= user._id%>"/>
+<input id="star" type="hidden" value="<%= star%>"/>
+<input id="adminId" type="hidden" value="<%= post.group.admin_id%>"/>
 
 <!--模板引擎部分-->
 <script id="layer_template" type="text/html">
@@ -128,7 +162,7 @@
                     <span class="glyphicon glyphicon-trash comment-delete"></span>
                     {{/if}}
                     <span class="glyphicon glyphicon-comment"></span>
-                    <span class="label label-info">{{comment.floor}}L</span>
+                    <span class="floor">{{comment.floor}}L</span>
                 </span>
             <div style="clear: both;"></div>
         </div>

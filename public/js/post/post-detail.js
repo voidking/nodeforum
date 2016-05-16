@@ -234,4 +234,96 @@ $(function(){
         });
     });
 
+    // 分享
+    $('.icon-share').click(function(){
+        layer.open({
+            type: 1,
+            title: ['分享','text-align:center;padding: 0;'],
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: $('#share')
+        });
+    });
+
+    // 收藏
+    var star = $('#star').val();
+    if(star == 'true'){
+        $('.banner-body .not-star').hide();
+        $('.banner-body .has-star').show();
+    }
+
+    $('.banner-body .not-star').click(function(){
+        var postId =$('#postId').val();
+        var param = {
+            postId: postId
+        };
+        $.ajax({
+            url: '/star-add/api',
+            type: 'POST',
+            dataType: 'json',
+            data: param,
+            success:function(data){
+                if(data.state==1){
+                    layer.msg('收藏成功');
+                    $('.not-star').hide();
+                    $('.has-star').show();
+                }
+            },
+            error:function(error){
+
+            }
+        });
+    });
+
+    // 取消收藏
+    $('.banner-body .has-star').click(function(){
+        var postId =$('#postId').val();
+        var param = {
+            postId: postId
+        };
+        $.ajax({
+            url: '/star-delete/api',
+            type: 'POST',
+            dataType: 'json',
+            data: param,
+            success:function(data){
+                if(data.state==1){
+                    layer.msg('已取消收藏');
+                    $('.has-star').hide();
+                    $('.not-star').show();
+                }
+            },
+            error:function(error){
+
+            }
+        });
+    });
+
+    // 举报
+    $('.banner-body .icon-report').click(function(){
+        var adminId = $('#adminId').val();
+        var postId = $('#postId').val();
+        var param = {
+            adminId: adminId,
+            postId: postId
+        };
+        $.ajax({
+            url: '/post-report/api',
+            type: 'POST',
+            dataType: 'json',
+            traditional: true,
+            data: param,
+            success: function(data){
+                if(data.state == 1){
+                    layer.msg('举报成功，等待管理员处理');
+                }
+            },
+            error: function(xhr){
+                console.log(xhr);
+            }
+        });
+    });
+
 });

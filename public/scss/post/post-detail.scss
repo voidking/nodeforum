@@ -3,6 +3,67 @@
 @import "../partial/header";
 @import "../partial/footer";
 
+.banner-body{
+  position: relative;
+  clear: both;
+  height: 2.5rem;
+  border-bottom: 3px solid #eee;
+  background: url(../../img/index/noise.jpg);
+  .icon-star{
+    margin-left: .5rem;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .icon-share{
+    margin-left: 1rem;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .icon-report{
+    margin-left: 1rem;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .glyphicon{
+    vertical-align: middle;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: #aaa;
+  }
+  .font{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .8rem;
+    line-height: 2.5rem;
+    color: #aaa;
+  }
+  .group{
+    position: absolute;
+    display: inline-block;
+    width: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    bottom: .2rem;
+    right: .5rem;
+    text-align: right;
+    color: #aaa;
+    a{
+      text-decoration: none;
+      color: #00B26B;
+    }
+  }
+}
+
+#share{
+  .jiathis_style_32x32{
+    display: inline-block;
+    padding: 10px 20px;
+  }
+}
 #reply{
   display: none;
   width: 16rem;
@@ -110,10 +171,18 @@
               cursor: pointer;
             }
           }
-          .label{
+          .floor{
             margin-right: 1rem;
+            display: inline-block;
             vertical-align: middle;
-            background-color: #ddd;
+            background-color: #aaa;
+            width: 1.5rem;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: .6rem;
+            text-align: center;
+            border-radius: 3px;
+            color: #fff;
           }
         }
         .position{

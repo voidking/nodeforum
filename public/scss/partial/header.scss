@@ -36,23 +36,9 @@
           background-size: 100%;
         }
       }
-//      .user{
-//        float: right;
-//        margin-right: 20px;
-//        .user-icon{
-//          display: inline-block;
-//          vertical-align: middle;
-//          width: 35px;
-//          height: 35px;
-//          background: url(../img/index/me.png) no-repeat;
-//          background-size: 100%;
-//        }
-//      }
       .user-thin{
         float: right;
         margin-right: 20px;
-        height: 50px;
-        line-height: 50px;
         .user-icon{
           display: inline-block;
           width: 40px;
@@ -71,17 +57,20 @@
           position: absolute;
           z-index: 10;
           width: 80px;
-          height: 100px;
           background: white;
           right: -1px;
           a{
             text-decoration: none;
           }
           .my{
+            height: 40px;
+            line-height: 40px;
             text-align: center;
             border-bottom: 1px solid blue;
           }
           .logout{
+            height: 40px;
+            line-height: 40px;
             text-align: center;
           }
         }
@@ -132,7 +121,7 @@
     background: #FFF;
     .user-thin{
       .user-icon{
-        display: inline-block;
+        display: none;
         width: 50px;
         height: 50px;
         img{
@@ -145,18 +134,21 @@
         position: absolute;
         z-index: 10;
         width: 80px;
-        height: 100px;
         background: white;
         right: -1px;
         a{
           text-decoration: none;
         }
-        .my{
-          text-align: center;
-          border-bottom: 1px solid blue;
-        }
-        .logout{
-          text-align: center;
+        div{
+          height: 40px;
+          line-height: 40px;
+          &.my{
+            text-align: center;
+            border-bottom: 1px solid blue;
+          }
+          &.logout{
+            text-align: center;
+          }
         }
       }
       &:hover{
@@ -166,7 +158,8 @@
     .main-nav {
       .nav {
         &.navbar-left{
-          margin-left: -56px;
+          //margin-left: -56px;
+          height: 50px;
         }
         .logo{
           float: left;
@@ -214,18 +207,21 @@
             position: absolute;
             z-index: 10;
             width: 80px;
-            height: 100px;
             background: white;
             right: -1px;
             a{
               text-decoration: none;
             }
-            .my{
-              text-align: center;
-              border-bottom: 1px solid blue;
-            }
-            .logout{
-              text-align: center;
+            div{
+              height: 40px;
+              line-height: 40px;
+              &.my{
+                text-align: center;
+                border-bottom: 1px solid blue;
+              }
+              &.logout{
+                text-align: center;
+              }
             }
           }
           &:hover{
