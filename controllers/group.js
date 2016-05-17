@@ -164,7 +164,7 @@ exports.discover = function(req, res){
             if(!groups){
                groups = [];
             }
-            Post.findTen(function(err, posts){
+            Post.findNine(function(err, posts){
                 res.render('./group/discover',{
                     title: '发现',
                     user: req.session.user,

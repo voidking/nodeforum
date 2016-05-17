@@ -7,7 +7,9 @@ var GroupSchema = new mongoose.Schema({
     groupname: {type: String},
     info: {type: String},
     head_image: {type: String},
-    admin_id: { type: Schema.Types.ObjectId}
+    admin_id: { type: Schema.Types.ObjectId},
+    create_at: { type: Date, default: Date.now },
+    update_at: { type: Date, default: Date.now }
 });
 
 GroupSchema.statics= {

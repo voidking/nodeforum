@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <%- include ../partial/head %>
+    <style>
+        .demoflow .laypage_next {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 40px;
+            line-height: 40px;
+            background-color: #eee;
+            color: #000;
+        }
+    </style>
+    <script src="/js/util/laypage.js"></script>
+    <script>
+        $(function(){
+            laypage({
+                cont: 'page8', //容器。值支持id名、原生dom对象，jquery对象,
+                pages: 7, //总页数
+                groups: 0, //连续分数数0
+                prev: false, //不显示上一页
+                next: '查看更多',
+                skin: 'flow', //设置信息流模式的样式
+                jump: function(obj){
+                    if(obj.curr === 6){
+                        this.next = '没有更多了';
+                    }
+                    alert(obj.curr);
+                    $('#view8').append('哈哈');
+                }
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+<div id="view8" style="padding-top:10px; text-align:center;">
+    <img src="http://sentsin.qiniudn.com/laypage_0.png"><br>
+</div>
+<div id="page8" class="demoflow" style="margin-bottom:10px; text-align:center;">
+    <div name="laypage1.3" class="laypage_main laypageskin_flow" id="laypage_7">
+        <a href="javascript:;" class="laypage_next" data-page="2">查看更多</a>
+    </div>
+</div>
+
+</body>
+</html>

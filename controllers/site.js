@@ -11,7 +11,7 @@ var Post = require('../models/post-model');
 
 // 主页
 exports.index = function(req, res){
-    Post.fetch(function(err,posts){
+    Post.findNine(function(err,posts){
         res.render('index',{
             title: '首页',
             user: req.session.user,

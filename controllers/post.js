@@ -19,7 +19,7 @@ var PostCollect = require('../models/post-collect-model');
 
 var request = require('request');
 var lodash = require('lodash');
-
+var eventproxy = require('eventproxy');
 
 // 发布帖子
 exports.post_add = function(req,res){
@@ -396,4 +396,36 @@ exports.mypost = function(req, res){
             posts: posts
         });
     });
+}
+
+// 群组详情页帖子分页
+exports.post_get_page_api = function(req, res){
+    var groupId = req.body.groupId;
+    var pageSize = req.body.pageSize;
+    var pageIndex = req.body.pageIndex;
+    var pageTotal = 0;
+    var posts = [];
+    var ep = new eventproxy();
+    Post.find({group: groupId}).count(function(err,count){
+        pageTotal = Math.ceil(count/pageSize);
+        ep.emit('count',true);
+    });
+
+    Post.findByPage(groupId,pageSize,pageIndex,function(err, data){
+        posts = data;
+        ep.emit('findposts',true);
+    });
+
+    ep.all('count','findposts',function(result1,result2){
+        if(result1 && result2){
+            res.json({
+                state: 1,
+                pageSize: pageSize,
+                pageIndex: pageIndex,
+                pageTotal: pageTotal,
+                posts: posts
+            });
+        }
+    });
+
 }

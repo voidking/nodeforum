@@ -42,3 +42,10 @@ exports.share = function(req, res){
     });
 }
 
+// 分页
+exports.page = function(req, res){
+    res.render('./test/page',{
+        title: '分页'
+    });
+}
+

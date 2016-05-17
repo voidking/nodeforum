@@ -18,7 +18,8 @@ var router = express.Router();
 router.get('/test/cropper',test.cropper);// 截图
 router.get('/test/chat',test.chat);// 聊天
 router.get('/test/baidu-map',test.baidu_map);// 百度地图
-router.get('/test/share',test.share);
+router.get('/test/share',test.share); // 分享
+router.get('/test/page',test.page);// 分页
 
 // 主页
 router.get('/', site.index);
@@ -64,13 +65,14 @@ router.post('/comment-add/api',post.comment_add_api);// 评论帖子api
 router.post('/comment-getall/api',post.comment_getall_api);// 获取帖子所有评论api
 router.post('/comment-delete/api',post.comment_delete_api);// 删除评论api
 router.post('/at-add/api',post.at_add_api);// @其他用户
-router.post('/star-add/api',post.star_add_api);// 收藏帖子
-router.post('/star-delete/api',post.star_delete_api);// 取消收藏帖子
+router.post('/star-add/api',post.star_add_api);// 收藏帖子api
+router.post('/star-delete/api',post.star_delete_api);// 取消收藏帖子api
 router.get('/mystar',checkLogin);// 我的收藏
 router.get('/mystar',post.mystar);
 router.get('/mypost',checkLogin);// 我的帖子
 router.get('/mypost',post.mypost);
-router.post('/post-report/api',post.post_report_api);
+router.post('/post-report/api',post.post_report_api); // 举报帖子api
+router.post('/post-get-page/api',post.post_get_page_api);// 群组详情页帖子分页
 
 // 404
 router.get('*',site.error404);

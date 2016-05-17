@@ -39,11 +39,28 @@ PostSchema.statics= {
             .populate('group')
             .exec(cb);
     },
+    findNine: function(cb){
+        return this.find({})
+            .sort({create_at: -1})
+            .limit(9)
+            .exec(cb);
+    },
     findTen: function(cb){
-        return this.find({}).limit(10).exec(cb);
+        return this.find({})
+            .sort({create_at: -1})
+            .limit(10)
+            .exec(cb);
     },
     findByPostIds: function(postIds,cb){
         return this.find({_id:{$in: postIds}})
+            .sort({create_at: -1})
+            .exec(cb);
+    },
+    findByPage: function(groupId,pageSize,pageIndex,cb){
+        return this.find({group: groupId})
+            .sort({create_at: -1})
+            .skip(pageSize*(pageIndex-1))
+            .limit(pageSize)
             .exec(cb);
     }
 };

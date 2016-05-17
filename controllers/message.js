@@ -76,7 +76,7 @@ exports.message_add_api = function(req, res){
     var to_user = req.body.to_user;
     var content = req.body.content;
     if(from_user == to_user){
-        // 默认可以发给自己
+        //默认可以发给自己
     }
     var param = {
         from_user: from_user,

@@ -3,7 +3,22 @@
 @import "../partial/header";
 @import "../partial/footer";
 
-
+#page{
+  .laypage_main{
+    background: #eee;
+    height: 3rem;
+    a{
+      display: inline-block;
+      line-height: 3rem;
+      font-size: .8rem;
+    }
+    .page_nomore{
+      display: inline-block;
+      line-height: 3rem;
+      font-size: .8rem;
+    }
+  }
+}
 .content{
   width: 100%;
   min-height: 100vh;
