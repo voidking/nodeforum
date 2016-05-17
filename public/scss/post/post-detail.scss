@@ -16,27 +16,27 @@
     }
   }
   .icon-share{
-    margin-left: 1rem;
+    margin-left: .5rem;
     &:hover{
       cursor: pointer;
     }
   }
   .icon-report{
-    margin-left: 1rem;
+    margin-left: .5rem;
     &:hover{
       cursor: pointer;
     }
   }
   .glyphicon{
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 2.5rem;
     color: #aaa;
   }
   .font{
     display: inline-block;
     vertical-align: middle;
-    font-size: .8rem;
+    font-size: .7rem;
     line-height: 2.5rem;
     color: #aaa;
   }
@@ -51,6 +51,7 @@
     right: .5rem;
     text-align: right;
     color: #aaa;
+    font-size: .6rem;
     a{
       text-decoration: none;
       color: #00B26B;

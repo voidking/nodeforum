@@ -49,7 +49,7 @@
                     </span>
                 </span>
                 <span class="right">
-                    <% if(user._id == post.author._id){%>
+                    <% if(user._id == post.author._id || user._id == post.group.admin_id){%>
                     <span class="glyphicon glyphicon-trash post-delete"></span>
                     <% }%>
                     <span class="glyphicon glyphicon-comment"></span>
@@ -90,7 +90,7 @@
                     </span>
                 </span>
                 <span class="right">
-                    <% if(user._id == comment.from_user._id){%>
+                    <% if(user._id == comment.from_user._id || user._id == post.group.admin_id){%>
                     <span class="glyphicon glyphicon-trash comment-delete"></span>
                     <% }%>
                     <span class="glyphicon glyphicon-comment"></span>
@@ -158,7 +158,7 @@
                     </span>
                 </span>
                 <span class="right">
-                    {{if ('<%= user._id%>' == comment.from_user._id)}}
+                    {{if ('<%= user._id%>' == comment.from_user._id || '<%= user._id%>' == '<%= post.group.admin_id%>')}}
                     <span class="glyphicon glyphicon-trash comment-delete"></span>
                     {{/if}}
                     <span class="glyphicon glyphicon-comment"></span>
