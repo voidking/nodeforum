@@ -1,6 +1,6 @@
 # nodeforum
 a forum build by node  
-version: v1.3.1
+version: v1.3.2
 url: https://github.com/voidking/nodeforum.git  
 
 # 作者相关
