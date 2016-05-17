@@ -1,6 +1,6 @@
 # nodeforum
 a forum build by node  
-version: v1.3.2
+version: v1.3.3
 url: https://github.com/voidking/nodeforum.git  
 
 # 作者相关
@@ -57,6 +57,7 @@ npm install request
 npm install lodash 
 npm install socket.io 
 npm install eventproxy
+npm install ejs-mate
 ```
 
 

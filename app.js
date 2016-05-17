@@ -27,7 +27,9 @@ app.use(session({
 }));
 
 app.set('views','./views');
-app.set('view engine','ejs');
+app.set('view engine', 'html');
+app.engine('html', require('ejs-mate'));
+//app.set('view engine','ejs');
 app.use(flash());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
