@@ -41,12 +41,14 @@ PostSchema.statics= {
     },
     findNine: function(cb){
         return this.find({})
+            .populate('group')
             .sort({create_at: -1})
             .limit(9)
             .exec(cb);
     },
     findTen: function(cb){
         return this.find({})
+            .populate('group')
             .sort({create_at: -1})
             .limit(10)
             .exec(cb);

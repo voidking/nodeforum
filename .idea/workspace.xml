@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c862594d-2b69-45d2-b78a-205de48fa2b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schemas/post-schema.js" afterPath="$PROJECT_DIR$/schemas/post-schema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\404.ejs" afterPath="$PROJECT_DIR$/views/404.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\group\discover.ejs" afterPath="$PROJECT_DIR$/views/group/discover.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\group\follow.ejs" afterPath="$PROJECT_DIR$/views/group/follow.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\group\group-add.ejs" afterPath="$PROJECT_DIR$/views/group/group-add.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\group\group-detail.ejs" afterPath="$PROJECT_DIR$/views/group/group-detail.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\index.ejs" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\message\message.ejs" afterPath="$PROJECT_DIR$/views/message/message.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\post\mypost.ejs" afterPath="$PROJECT_DIR$/views/post/mypost.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\post\mystar.ejs" afterPath="$PROJECT_DIR$/views/post/mystar.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\post\post-add.ejs" afterPath="$PROJECT_DIR$/views/post/post-add.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\post\post-detail.ejs" afterPath="$PROJECT_DIR$/views/post/post-detail.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\test\baidu-map.ejs" afterPath="$PROJECT_DIR$/views/test/baidu-map.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\test\chat.ejs" afterPath="$PROJECT_DIR$/views/test/chat.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\test\cropper.ejs" afterPath="$PROJECT_DIR$/views/test/cropper.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\test\page.ejs" afterPath="$PROJECT_DIR$/views/test/page.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\test\share.ejs" afterPath="$PROJECT_DIR$/views/test/share.html" />
-      <change type="MOVED" beforePath="E:\nodejs\nodeforum\views\user\home.ejs" afterPath="$PROJECT_DIR$/views/user/home.html" />
     </list>
     <ignored path="nodeforum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +59,8 @@
       <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5714285" vertical-offset="0" max-vertical-offset="2904">
-              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state vertical-scroll-proportion="-1.5714285" vertical-offset="1254" max-vertical-offset="2904">
+              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -88,10 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="post-schema.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schemas/post-schema.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.028697573" vertical-offset="1087" max-vertical-offset="1650">
+              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1042654" vertical-offset="0" max-vertical-offset="1078">
+            <state vertical-scroll-proportion="-1.4193548" vertical-offset="0" max-vertical-offset="1078">
               <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
@@ -161,7 +152,6 @@
         <option value="$PROJECT_DIR$/public/js/group/group-detail.js" />
         <option value="$PROJECT_DIR$/controllers/site.js" />
         <option value="$PROJECT_DIR$/controllers/group.js" />
-        <option value="$PROJECT_DIR$/schemas/post-schema.js" />
         <option value="$PROJECT_DIR$/schemas/group-schema.js" />
         <option value="$PROJECT_DIR$/views/post/post-detail.ejs" />
         <option value="$PROJECT_DIR$/public/scss/post/post-detail.scss" />
@@ -172,6 +162,7 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/schemas/post-schema.js" />
       </list>
     </option>
   </component>
@@ -250,6 +241,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="nodeforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodeforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodeforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schemas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,10 +346,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28592592" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28592592" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21855828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -652,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schemas/post-schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1153" max-vertical-offset="1606">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schemas/group-schema.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.16556291" vertical-offset="317" max-vertical-offset="770">
@@ -730,10 +728,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4193548" vertical-offset="0" max-vertical-offset="1078">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5714285" vertical-offset="0" max-vertical-offset="2904">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state vertical-scroll-proportion="-1.5714285" vertical-offset="1254" max-vertical-offset="2904">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -741,10 +747,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/schemas/post-schema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1042654" vertical-offset="0" max-vertical-offset="1078">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.028697573" vertical-offset="1087" max-vertical-offset="1650">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
           <folding />
         </state>
       </provider>
