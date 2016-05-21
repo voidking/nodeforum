@@ -32,7 +32,9 @@ PostSchema.statics= {
             .exec(cb);
     },
     findByAuthorId: function(id,cb){
-        return this.find({author:id}).exec(cb);
+        return this.find({author:id})
+            .populate('group')
+            .exec(cb);
     },
     findByGroupId: function(id,cb){
         return this.find({group:id})
