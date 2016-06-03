@@ -20,6 +20,7 @@ router.get('/test/chat',test.chat);// 聊天
 router.get('/test/baidu-map',test.baidu_map);// 百度地图
 router.get('/test/share',test.share); // 分享
 router.get('/test/page',test.page);// 分页
+router.get('/test/emoji',test.emoji);
 
 // 主页
 router.get('/', site.index);

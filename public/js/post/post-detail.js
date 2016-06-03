@@ -326,4 +326,33 @@ $(function(){
         });
     });
 
+    // 表情
+    $('.emotion').qqFace({
+        id : 'facebox',
+        assign:'saytext',
+        path:'/js/util/qqface/arclist/'	//表情存放的路径
+    });
+    $(".sub_btn").click(function(){
+        var str = $("#saytext").val();
+        $("#show").html(replace_em(str));
+    });
+
+    function replace_em(str){
+        str = str.replace(/\</g,'&lt;');
+        str = str.replace(/\>/g,'&gt;');
+        str = str.replace(/\n/g,'<br/>');
+        str = str.replace(/\[em_([0-9]*)\]/g,'<img src="/js/util/qqface/arclist/$1.gif" border="0" />');
+        return str;
+    }
+
+    function replace_all_em(){
+        var $contents = $('.content p');
+        $contents.each(function(index,el){
+            var str = $(el).html();
+            var new_str = replace_em(str);
+            $(el).html(new_str);
+        });
+    }
+
+    replace_all_em();
 });

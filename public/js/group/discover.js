@@ -11,6 +11,7 @@ $(function(){
         $('.tab').not($content).hide();
     });
 
+    // 关注群组
     $('#group .item .follow').click(function(e){
         var $that = $(this);
         e.preventDefault();
@@ -33,4 +34,8 @@ $(function(){
             }
         });
     });
+
+    // 搜索帖子
+
+
 });

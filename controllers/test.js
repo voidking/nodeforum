@@ -49,3 +49,10 @@ exports.page = function(req, res){
     });
 }
 
+// 表情
+exports.emoji = function(req, res){
+    res.render('./test/emoji',{
+        title: '表情'
+    });
+}
+

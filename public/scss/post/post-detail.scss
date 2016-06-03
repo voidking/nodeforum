@@ -67,10 +67,21 @@
 }
 #reply{
   display: none;
-  width: 16rem;
+  min-width: 16rem;
   padding: .5rem 1rem;
   background-color: #ddd;
   .right{
+    position: relative;
+    .emotion{
+      float: left;
+      margin-top: .5rem;
+      padding: .2rem .5rem;
+      background-color: #039153;
+      color: #fff;
+      &:hover{
+        cursor: pointer;
+      }
+    }
     .btn-reply{
       margin-top: .5rem;
       float: right;
@@ -196,6 +207,10 @@
         p{
           margin: 1.5rem 0 .5rem;
           font-size: 1.1rem;
+          img{
+            width: 1.1rem;
+            height: 1.1rem;
+          }
         }
         img{
           width: 100%;

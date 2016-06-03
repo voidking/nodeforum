@@ -4,6 +4,8 @@
     <%- include ../partial/head %>
     <meta name="description" content="<%= post.content%>">
     <link rel="stylesheet" href="/css/post/post-detail.css">
+    <script src="/js/util/qqface/js/jquery.qqFace.js"></script>
+    <script src="/js/util/qqface/js/jquery-browser.js"></script>
     <script src="/js/post/post-detail.js"></script>
 </head>
 
@@ -110,8 +112,9 @@
 
 <div id="reply">
     <div class="to-user">To:<span></span></div>
-    <textarea class="form-control reply-content" rows="3"></textarea>
+    <textarea id="saytext" class="form-control reply-content" rows="3"></textarea>
     <div class="right">
+        <!--<div class="emotion">表情</div>-->
         <div class="btn-reply">回复</div>
     </div>
     <div style="clear: both;"></div>
